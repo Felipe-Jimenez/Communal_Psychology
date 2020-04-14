@@ -27,40 +27,31 @@ require "styles.php" ?>
         }
       }
     </script>
-    <style media="screen">
-      .middle{
-        float: left;
-        padding-top: 10px;
-        width: 80%;
-        height: 70%;
-      }
-    </style>
   </head>
   <body>
   <center>
-    <div class="top"></div>
-    <div class="leftBar"><h1></h1></div>
-    <div class="middle">
+    <div style="margin-top:20px;">
       <h2><span class="badge badge-secondary">Disorder</span> registration</h2>
-      <div id="father">
-        <form name="FORM1" action="../Backend/register_t.php" method="post">
+      <div>
+        <form name="FORM1" action="../BackEnd/register_t.php" method="post">
         <div class="form-group">
           <label for="name">Name</label>
           <div class="col">
             <input  name="name" type="text" class="form-group mx-sm-3 mb-2" placeholder="Example">
           </div>
         </div>
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-2">
           <label for="type">Type</label>
           <select name="type"  class="custom-select">
             <option value=0>select</option>
             <option value="Mental">Mental</option>
             <option value="Physical">Physical</option>
-            <option value="Physical">Sexual</option>
+            <option value="Sexual">Sexual</option>
+            <option value="Alimentary">Alimentary</option>
           </select>
         </div>
         <div class="form-group">
-          <div class="col col-md-4">
+          <div class="col col-md-3">
             <label for="des">Diagnostic criteria</label><br>
             <textarea name="des" class="form-control" rows="2"></textarea>
           </div>

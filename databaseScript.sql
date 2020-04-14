@@ -88,7 +88,11 @@ insert into Trastorno values('Psychosis','Mental','Distorted thinking and knowle
 insert into Trastorno values('Chronic anxiety','Mental','Episodes of fear and terror in common situations for the person');
 insert into Trastorno values('Humor','Mental','Lingering feelings of sadness or periods with overflowing joy');
 insert into Trastorno values('Dissociative','Mental','Severe disturbances or changes in memory, identity and general consciousness');
-
+insert into Trastorno values('Obsessive compulsive','Mental','The individual experiences intrusive thoughts, ideas, or images related to fear, anguish, and stress');
+insert into Trastorno values('Bipolarity','Mental','Exaggerated changes in mood, from mania to major depression');
+insert into Trastorno values('Depression','Mental','Psychopathology that weakens and affects how the individual feels, thinks and acts');
+insert into Trastorno values('Antisocial','Mental','Tendency to not relate in society, avoiding any interaction, shy, depressed and have social anxiety');
+insert into Trastorno values('Nervous bulimia','Alimentary','Abnormal eating patterns, with episodes of massive food intake followed by maneuvers seeking to eliminate those calories');
 //PERSONAS y COMUNIDAD
 insert into Persona values('JICF000406HJCMSLA7','Felipe Alejandro Jimenez Castillo','M','2000-04-06',45645);
 insert into Com_Per values(3,'JICF000406HJCMSLA7');
