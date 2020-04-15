@@ -49,7 +49,7 @@ else{
     <nav class="navbar navbar-brand">
       <?php echo $name; ?>
     </nav>
-    <a href="../BackEnd/destroy.php" class="btn btn-outline-danger btn-sm">log out</a>
+    <a href="../BackEnd/destroy.php" class="btn btn-outline-warning btn-sm">log out</a>
   </nav>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

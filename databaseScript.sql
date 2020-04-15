@@ -93,6 +93,7 @@ insert into Trastorno values('Bipolarity','Mental','Exaggerated changes in mood,
 insert into Trastorno values('Depression','Mental','Psychopathology that weakens and affects how the individual feels, thinks and acts');
 insert into Trastorno values('Antisocial','Mental','Tendency to not relate in society, avoiding any interaction, shy, depressed and have social anxiety');
 insert into Trastorno values('Nervous bulimia','Alimentary','Abnormal eating patterns, with episodes of massive food intake followed by maneuvers seeking to eliminate those calories');
+
 //PERSONAS y COMUNIDAD
 insert into Persona values('JICF000406HJCMSLA7','Felipe Alejandro Jimenez Castillo','M','2000-04-06',45645);
 insert into Com_Per values(3,'JICF000406HJCMSLA7');

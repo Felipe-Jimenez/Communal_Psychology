@@ -13,18 +13,43 @@ require "styles.php";
     <title>Community psychology</title>
     <meta name"viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style media="screen">
+      html{
+        scroll-behavior: smooth;
+      }
       .r1{
-        padding-bottom: 30px;
+        margin-top: 30px;
+        margin-bottom: 50px;
       }
       #a{
         padding-top: 30px;
+        height: 600px;
+      }
+      .about{
+        width: 80%;
+        height: 800px;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        padding-top: 30px;
+        background-image: linear-gradient(to top, #fff7e6 0%, #f2f2f2 100%);
+      }
+      p{
+        font-size: 25px;
+        margin-top: 20px;
+      }
+      span{
+        font-weight: bolder;
+      }
+      .bot{
+        background-color: #2E3436;
+        width: 100%;
+        height: 70px;
       }
     </style>
   </head>
   <body>
     <center>
     <div width="100%" height="90px" style="padding-top:10px">
-      <h1 class="display-4">Community Psychology</h1>
+      <h1 class="display-3">Community Psychology</h1>
     </div>
     <div class="container" id="a">
       <div class="row r1">
@@ -67,6 +92,20 @@ require "styles.php";
           <h5><mark>Search by Name</mark></h5>
         </div>
       </div>
+    </div>
+    <a href="#ancla">About this</a>
+    <div class="about" id="ancla">
+      <h1>About the proyect <span>Community psychology</span></h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <p>This page was created with the aim of statistically informing the development of psychological and psychopathological problems of the communities in their development area, as well as the mental and physical development of those people belonging to communities with reinforced tendencies or in complex analysis</p>
+        </div>
+      </div>
+    </div>
+    <div class="bot">
+      <a href="https://github.com/Felipe-Jimenez/Communal_Psychology.git" target="_blank">
+        <img src="../imgs/github.png" height="50px" width="50px" style="margin-top:10px">
+      </a>
     </div>
   </center>
 
