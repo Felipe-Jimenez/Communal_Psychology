@@ -20,7 +20,7 @@ $res = mysqli_query($con, $sql);
     <meta name"viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style media="screen">
       .middle{
-        float: left;
+        margin-top: 10px;
         padding-top: 10px;
         width: 80%;
         height: 100%;
@@ -33,13 +33,10 @@ $res = mysqli_query($con, $sql);
     </script>
   </head>
   <body>
-    <div class="leftBar">
-      <h1></h1>
-    </div>
+    <center>
     <div class="middle">
-      <center>
       <h3>Registered <mark>Comunities</mark></h3>
-      <table class="table table-sm table-striped">
+      <table class="table table-md table-striped mt-4">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Name</th>
@@ -73,8 +70,8 @@ $res = mysqli_query($con, $sql);
           ?>
         </tbody>
       </table>
-      </center>
     </div>
 
+  </center>
   </body>
 </html>

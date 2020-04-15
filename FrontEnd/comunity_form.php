@@ -61,7 +61,6 @@ require "styles.php";
           <label for="ss">Social sistem</label>
           <select name="ss" class="custom-select">
             <option value=0>select</option>
-            <option value="Capitalist">Capitalist</option>
             <option value="Socialist">Socialist</option>
             <option value="Comunist">Comunist</option>
             <option value="Monarchy">Monarchy</option>

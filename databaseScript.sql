@@ -81,6 +81,7 @@ insert into Comunidad values(0,'Llama de Amor','Ethnic','Socialist','The love fo
 insert into Comunidad values(0,'SubMind','Scientific','Comunist','Scientific knowledge','Develop research',0);
 insert into Comunidad values(0,'FAD','Social','Anarchy','Art','Create street art',0);
 insert into Comunidad values(0,'UNAM-science','Scientific','Socialist','Scientific knowledge','Create a cure for COVID-19',0);
+insert into Comunidad values(0,'FEU','Politic','Comunist','The public politics into UDG','Represent the students of our university and be the voice of their choices',0);
 
 //TRASTORNS
 insert into Trastorno values('Minor psychosis','Mental','Small hallucinations, emotional imbalance and irrationality');
@@ -107,6 +108,6 @@ update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 insert into Persona values('SALA770826MTSLPR82','Araceli Salazar Lopez','F','1977-08-26',45875);
 insert into Com_Per values(3,'SALA770826MTSLPR82');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
-insert into Persona values('RUMJ850212HJCZNS15','Jose de Jesus Ruiz Mendoza','F','1985-02-12',45875);
+insert into Persona values('RUMJ850212HJCZNS15','Jose de Jesus Ruiz Mendoza','M','1985-02-12',45875);
 insert into Com_Per values(3,'RUMJ850212HJCZNS15');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
