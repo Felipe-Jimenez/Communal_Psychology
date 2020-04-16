@@ -25,7 +25,7 @@ $obj = $num['objetivo'];
 $par = $num['n_participantes'];
 
 //segunda consulta para tabla de personas relacionadas
-$sql = "SELECT Persona.curp,Persona.nombre,Persona.fecha_n FROM Persona,Com_Per WHERE Com_Per.id_comunidad = $id AND Persona.curp = Com_Per.id_persona ORDER BY Persona.nombre LIMIT 10";
+$sql = "SELECT Persona.curp,Persona.nombre,Rol.rol FROM Rol,Persona WHERE Rol.id_comunidad = $id AND Persona.curp = Rol.id_persona";
 $res = mysqli_query($con, $sql);
 ?>
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ $res = mysqli_query($con, $sql);
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Birth</th>
+            <th scope="col">Rol</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -96,11 +96,11 @@ $res = mysqli_query($con, $sql);
             while($num = mysqli_fetch_assoc($res)){
               $curp = $num['curp'];
               $name = $num['nombre'];
-              $date = $num['fecha_n'];
+              $rol = $num['rol'];
               echo "<tr>
                       <th scope=\"row\">$i</th>
                       <td>$name</td>
-                      <td>$date</td>
+                      <td>$rol</td>
                       <td><button type=\"button\" class=\"btn btn-warning btn-sm\" onClick=\"enviar('$curp');\">Edit</button></td>
                     </tr>";
               $i += 1;

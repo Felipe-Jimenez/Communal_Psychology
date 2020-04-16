@@ -17,11 +17,12 @@ require "styles.php";
         var curp = document.FORM1.curp.value;
         var name = document.FORM1.name.value;
         var gender = document.FORM1.gender.value;
+        var rol = document.FORM1.rol.value;
         var birth = document.FORM1.birth.value;
+        var pc = document.FORM1.pc.value;
 
-        if(curp!='' && name!='' && gender!='null' && birth!=''){
-          //document.FORM1.submit();
-          alert("do it!");
+        if(curp!='' && name!='' && gender!='null' && rol!='null' && birth!='' && pc!=''){
+          document.FORM1.submit();
           return;
         }
         else{
@@ -35,7 +36,9 @@ require "styles.php";
   <center>
       <h2 style="margin-top:20px;"><span class="badge badge-secondary">Person</span> registration</h2>
       <div class="container mt-5">
-        <form name="FORM1" action="../BackEnd/register_c.php" method="post">
+        <form name="FORM1" action="../BackEnd/register_p.php" method="post">
+
+          <input type="hidden" name="idC" value=<?php echo $_GET['id']; ?>>
 
           <div class="form-group">
             <label for="curp">CURP</label>
@@ -51,12 +54,25 @@ require "styles.php";
             </div>
           </div>
 
-          <div class="form-group  col-md-2">
+          <div class="form-group  col-md-3">
             <label for="gender">Gender</label>
             <select name="gender" class="custom-select">
               <option value="null">select</option>
               <option value="F">Female</option>
               <option value="M">Male</option>
+              <option value="N">Not defined</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="rol">Rol</label>
+            <select name="rol" class="custom-select">
+              <option value="null">select</option>
+              <option value="Founder">Founder</option>
+              <option value="Admin">Admin</option>
+              <option value="Moderator">Moderator</option>
+              <option value="Agent">Agent</option>
+              <option value="Member">Member</option>
             </select>
           </div>
 
@@ -67,11 +83,18 @@ require "styles.php";
             </div>
           </div>
 
-            <button type="button" class="btn btn-primary" onClick="enviar();" >Send</button>
+          <div class="form-group">
+            <label for="pc">Postal code</label>
+            <div class="col">
+              <input  name="pc" type="text" class="form-group mx-sm-3 mb-2" placeholder="Example">
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" onClick="enviar();" >Send</button>
         </form>
         <br><a href="home.php">Return</a>
       </div>
-  
+
   </center>
   </body>
 </html>

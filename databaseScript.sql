@@ -8,13 +8,12 @@ create table Administrador(
   estatus int default(1),
   eliminado int default(0)
 );
-
 create table Persona(
   curp varchar(18) primary key,
   nombre varchar(100) not null,
   sexo char not null,
   fecha_n date not null,
-  codigo_postal int
+  codigo_postal int not null
 );
 create table Comunidad(
   id_Comunidad int primary key auto_increment,
@@ -26,17 +25,13 @@ create table Comunidad(
   n_participantes int default(0)
 );
 create table Rol(
-  id_Rol int primary key auto_increment,
-  tipo varchar(20),
-  actividades varchar(100)
-);
-create table Pers_Rol(
-  id_rol int,
+  rol varchar(30) not null,
   id_persona varchar(18),
-  estado int default(0)
+  id_comunidad int,
+  estado int default(1)
 );
-alter table Pers_Rol add foreign key (id_rol) references Rol(id_Rol);
-alter table Pers_Rol add foreign key (id_persona) references Persona(curp);
+alter table Rol add foreign key (id_persona) references Persona(curp);
+alter table Rol add foreign key (id_comunidad) references Comunidad(id_Comunidad);
 
 create table Com_Per(
   id_comunidad int,
@@ -97,17 +92,26 @@ insert into Trastorno values('Nervous bulimia','Alimentary','Abnormal eating pat
 
 //PERSONAS y COMUNIDAD
 insert into Persona values('JICF000406HJCMSLA7','Felipe Alejandro Jimenez Castillo','M','2000-04-06',45645);
+insert into Rol values ('Founder','JICF000406HJCMSLA7',3,1);
 insert into Com_Per values(3,'JICF000406HJCMSLA7');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
+
 insert into Persona values('BADD110313HCMLNS09','Davalos Arturo Daveson Darrell','M','2013-07-16',45875);
+insert into Rol values ('Admin','BADD110313HCMLNS09',3,1);
 insert into Com_Per values(3,'BADD110313HCMLNS09');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
+
 insert into Persona values('FOCM980826MJCLSR47','Maria Guadalupe Flores Castro','F','1998-08-26',45875);
+insert into Rol values ('Member','FOCM980826MJCLSR47',3,1);
 insert into Com_Per values(3,'FOCM980826MJCLSR47');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
+
 insert into Persona values('SALA770826MTSLPR82','Araceli Salazar Lopez','F','1977-08-26',45875);
+  insert into Rol values ('Member','SALA770826MTSLPR82',3,1);
 insert into Com_Per values(3,'SALA770826MTSLPR82');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
+
 insert into Persona values('RUMJ850212HJCZNS15','Jose de Jesus Ruiz Mendoza','M','1985-02-12',45875);
+  insert into Rol values ('Member','RUMJ850212HJCZNS15',3,1);
 insert into Com_Per values(3,'RUMJ850212HJCZNS15');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
