@@ -20,18 +20,18 @@ $res = mysqli_query($con, $sql);
     <meta name"viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style media="screen">
       .middle{
-        margin-top: 10px;
-        padding-top: 10px;
+        margin-top: 15px;
         width: 80%;
-        height: 100%;
+        height: 600px;
+        overflow-y: scroll;
       }
     </style>
   </head>
   <body>
     <center>
 
+    <h3 style="margin-top:15px;">Registered <mark>Persons</mark></h3>
     <div class="middle">
-      <h3>Registered <mark>Persons</mark></h3>
       <table class="table table-md table-striped mt-4">
         <thead class="thead-dark">
           <tr>
@@ -49,14 +49,12 @@ $res = mysqli_query($con, $sql);
             $name = $num['nombre'];//donde, fila, columna
             $gender = $num['sexo'];
             $date = $num['fecha_n'];
-
             echo "<tr>
                     <th scope=\"row\">$curp</th>
                     <td>$name</td>
                     <td>$gender</td>
                     <td>$date</td>
                   </tr>";
-
             $i += 1;
           }
         ?>

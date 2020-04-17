@@ -21,16 +21,16 @@ $res = mysqli_query($con, $sql);
     <style media="screen">
       .middle{
         margin-top: 10px;
-        padding-top: 10px;
         width: 80%;
-        height: 100%;
+        height: 600px;
+        overflow-y: scroll;
       }
     </style>
   </head>
   <body>
     <center>
+      <h3 style="margin-top:15px">Registered <mark>Disorders</mark></h3>
     <div class="middle">
-      <h3>Registered <mark>Disorders</mark></h3>
       <table class="table table-md table-striped mt-4">
         <thead class="thead-dark">
           <tr>
