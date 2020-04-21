@@ -4,7 +4,6 @@ session_start();
 if(empty($_SESSION['id']))
   header("location: ../index.php");
 
-
 $idu = $_GET['id'];
 
 //CONECTION TO DATABASE
@@ -25,7 +24,7 @@ $obj = $num['objetivo'];
 $par = $num['n_participantes'];
 
 //segunda consulta para tabla de personas relacionadas
-$sql = "SELECT Persona.curp,Persona.nombre,Rol.rol FROM Rol,Persona WHERE Rol.id_comunidad = $id AND Persona.curp = Rol.id_persona";
+$sql = "SELECT Persona.curp,Persona.nombre,Rol.rol FROM Rol,Persona WHERE Rol.id_comunidad = $id AND Persona.curp = Rol.id_persona ORDER BY Persona.nombre";
 $res = mysqli_query($con, $sql);
 ?>
 <!DOCTYPE html>
@@ -56,6 +55,11 @@ $res = mysqli_query($con, $sql);
         height: 550;
       }
     </style>
+    <script>
+      function enviar(n){
+        window.location = "admin_view.php?id="+n;
+      }
+    </script>
   </head>
   <body>
     <center>
@@ -101,7 +105,7 @@ $res = mysqli_query($con, $sql);
                       <th scope=\"row\">$i</th>
                       <td>$name</td>
                       <td>$rol</td>
-                      <td><button type=\"button\" class=\"btn btn-warning btn-sm\" onClick=\"enviar('$curp');\">Edit</button></td>
+                      <td><button type=\"button\" class=\"btn btn-warning btn-sm\" onClick=\"enviar('$curp');\">View</button></td>
                     </tr>";
               $i += 1;
             }

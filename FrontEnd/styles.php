@@ -41,7 +41,7 @@ else{
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="admin_view.php">Profile</a>
         </li>
       </ul>
     </div>

@@ -9,7 +9,7 @@ if(isset($_SESSION['id']))
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <meta name"viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style media="screen">
       *{

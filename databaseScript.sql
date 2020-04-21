@@ -5,8 +5,8 @@ create table Administrador(
   nombre varchar(30) not null,
   email varchar(30) not null,
   pasw varchar(100) not null,
-  estatus int default(1),
-  eliminado int default(0)
+  estatus int default 1,
+  eliminado int default 0
 );
 create table Persona(
   curp varchar(18) primary key,
@@ -21,38 +21,38 @@ create table Comunidad(
   tipo varchar(20) not null,
   sistema_social varchar(20),
   interes_comun varchar(50) not null,
-  objetivo varchar(50),
-  n_participantes int default(0)
+  objetivo varchar(100),
+  n_participantes int default 0
 );
 create table Rol(
   rol varchar(30) not null,
   id_persona varchar(18),
   id_comunidad int,
-  estado int default(1)
+  estado int default 1
 );
 alter table Rol add foreign key (id_persona) references Persona(curp);
 alter table Rol add foreign key (id_comunidad) references Comunidad(id_Comunidad);
 
-create table Com_Per(
-  id_comunidad int,
-  id_persona varchar(18)
-);
-alter table Com_Per add foreign key (id_comunidad) references Comunidad(id_Comunidad);
-alter table Com_Per add foreign key (id_persona) references Persona(curp);
-
 create table Perfil(
   id_persona varchar(18),
   salud_mental varchar(30),
-  salud_fisica varchar(30),
-  area_des varchar(30)
+  salud_fisica varchar(30)
 );
 alter table Perfil add foreign key (id_persona) references Persona(curp);
 
+create table Perfi_comunal(
+  id_comunidad int,
+  tendencia varchar(50),
+  recursos varchar(50),
+  rango varchar(50)
+);
+alter table Perfi_comunal add foreign key (id_comunidad) references Comunidad(id_Comunidad);
+
 create table Padecimiento(
-  id_perfil varchar(18),
+  id_persona varchar(18),
   estado varchar(30) not null
 );
-alter table Padecimiento add foreign key(id_perfil) references Perfil(id_persona);
+alter table Padecimiento add foreign key(id_persona) references Persona(curp);
 
 create table Trastorno(
   nombre varchar(30) primary key,
@@ -63,7 +63,7 @@ create table Pade_Tras(
   id_padecimiento varchar(18),
   id_trastorno varchar(30)
 );
-alter table Pade_Tras add foreign key (id_padecimiento) references Padecimiento(id_perfil);
+alter table Pade_Tras add foreign key (id_padecimiento) references Padecimiento(id_persona);
 alter table Pade_Tras add foreign key (id_trastorno) references Trastorno(nombre);
 
 
@@ -77,6 +77,12 @@ insert into Comunidad values(0,'SubMind','Scientific','Comunist','Scientific kno
 insert into Comunidad values(0,'FAD','Social','Anarchy','Art','Create street art',0);
 insert into Comunidad values(0,'UNAM-science','Scientific','Socialist','Scientific knowledge','Create a cure for COVID-19',0);
 insert into Comunidad values(0,'FEU','Politic','Comunist','The public politics into UDG','Represent the students of our university and be the voice of their choices',0);
+insert into Comunidad values(0,'QciFem','Social','Anarchy','Womens rights','Modify the to improve gender parity',0);
+insert into Comunidad values(0,'Little learning','Digital','Comunist','Learning','Make the web a best site to the kids learning',0);
+insert into Comunidad values(0,'Stack OverFlow','Digital','Utopic','Programming','Create a library of detailed answers for all questions programming',0);
+
+insert into Comunidad values(0,'FAD','Social','Anarchy','Art','Create street art',0);
+insert into Comunidad values(0,'UNAM-science','Scientific','Socialist','Scientific knowledge','Create a cure for COVID-19',0);
 
 //TRASTORNS
 insert into Trastorno values('Minor psychosis','Mental','Small hallucinations, emotional imbalance and irrationality');
@@ -93,25 +99,20 @@ insert into Trastorno values('Nervous bulimia','Alimentary','Abnormal eating pat
 //PERSONAS y COMUNIDAD
 insert into Persona values('JICF000406HJCMSLA7','Felipe Alejandro Jimenez Castillo','M','2000-04-06',45645);
 insert into Rol values ('Founder','JICF000406HJCMSLA7',3,1);
-insert into Com_Per values(3,'JICF000406HJCMSLA7');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('BADD110313HCMLNS09','Davalos Arturo Daveson Darrell','M','2013-07-16',45875);
 insert into Rol values ('Admin','BADD110313HCMLNS09',3,1);
-insert into Com_Per values(3,'BADD110313HCMLNS09');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('FOCM980826MJCLSR47','Maria Guadalupe Flores Castro','F','1998-08-26',45875);
 insert into Rol values ('Member','FOCM980826MJCLSR47',3,1);
-insert into Com_Per values(3,'FOCM980826MJCLSR47');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('SALA770826MTSLPR82','Araceli Salazar Lopez','F','1977-08-26',45875);
-  insert into Rol values ('Member','SALA770826MTSLPR82',3,1);
-insert into Com_Per values(3,'SALA770826MTSLPR82');
+insert into Rol values ('Member','SALA770826MTSLPR82',3,1);
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('RUMJ850212HJCZNS15','Jose de Jesus Ruiz Mendoza','M','1985-02-12',45875);
-  insert into Rol values ('Member','RUMJ850212HJCZNS15',3,1);
-insert into Com_Per values(3,'RUMJ850212HJCZNS15');
+insert into Rol values ('Member','RUMJ850212HJCZNS15',3,1);
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;

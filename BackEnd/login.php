@@ -15,7 +15,7 @@ $num = mysqli_num_rows($res);
 
 if($num){
   $_SESSION['id'] = $query['id'];
-  $_SESSION['name'] = $query['nombre'].' '.$query['apellidos'];
+  $_SESSION['name'] = $query['nombre'];
 }
 
 echo $num;

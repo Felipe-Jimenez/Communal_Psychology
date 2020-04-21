@@ -33,7 +33,7 @@ require "styles.php";
         background-image: linear-gradient(to top, #fff7e6 0%, #f2f2f2 100%);
       }
       p{
-        font-size: 25px;
+        font-size: 22px;
         margin-top: 20px;
       }
       span{
@@ -95,10 +95,11 @@ require "styles.php";
     </div>
     <a href="#ancla">About this</a>
     <div class="about" id="ancla">
-      <h1>About the proyect <span>Community psychology</span></h1>
+      <h1>A little bite <span>about</span> this project</h1>
       <div class="row">
         <div class="col-sm-6">
-          <p>This page was created with the aim of statistically informing the development of psychological and psychopathological problems of the communities in their development area, as well as the mental and physical development of those people belonging to communities with reinforced tendencies or in complex analysis</p>
+          <h2>Objetive</h2>
+          <p>This page was created with the aim of statistically informing the development of psychological and psychopathological problems of the communities in their development area, as well as the mental and physical development of those people belonging to communities with concurrent tendencies or in complex analysis of a specific person</p>
         </div>
       </div>
     </div>
