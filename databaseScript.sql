@@ -67,10 +67,8 @@ alter table Pade_Tras add foreign key (id_padecimiento) references Padecimiento(
 alter table Pade_Tras add foreign key (id_trastorno) references Trastorno(nombre);
 
 
-//ADMINISTRATOR
 insert into Administrador values(0,'_denso','denso@gmail.com','fae0b27c451c728867a567e8c1bb4e53',1,0);
 
-//COMUNITY
 insert into Comunidad values(0,'CUCEI_social','Digital','Anarchy','Knowledge creation','maximize the university community',0);
 insert into Comunidad values(0,'Llama de Amor','Ethnic','Socialist','The love for own God','Create awareness in people about god',0);
 insert into Comunidad values(0,'SubMind','Scientific','Comunist','Scientific knowledge','Develop research',0);
@@ -80,11 +78,8 @@ insert into Comunidad values(0,'FEU','Politic','Comunist','The public politics i
 insert into Comunidad values(0,'QciFem','Social','Anarchy','Womens rights','Modify the to improve gender parity',0);
 insert into Comunidad values(0,'Little learning','Digital','Comunist','Learning','Make the web a best site to the kids learning',0);
 insert into Comunidad values(0,'Stack OverFlow','Digital','Utopic','Programming','Create a library of detailed answers for all questions programming',0);
+insert into Comunidad values(0,'ProgramadoresGDL','Social','Anarchy','Programming','Create a community to the newest programmers',0);
 
-insert into Comunidad values(0,'FAD','Social','Anarchy','Art','Create street art',0);
-insert into Comunidad values(0,'UNAM-science','Scientific','Socialist','Scientific knowledge','Create a cure for COVID-19',0);
-
-//TRASTORNS
 insert into Trastorno values('Minor psychosis','Mental','Small hallucinations, emotional imbalance and irrationality');
 insert into Trastorno values('Psychosis','Mental','Distorted thinking and knowledge');
 insert into Trastorno values('Chronic anxiety','Mental','Episodes of fear and terror in common situations for the person');
@@ -96,7 +91,6 @@ insert into Trastorno values('Depression','Mental','Psychopathology that weakens
 insert into Trastorno values('Antisocial','Mental','Tendency to not relate in society, avoiding any interaction, shy, depressed and have social anxiety');
 insert into Trastorno values('Nervous bulimia','Alimentary','Abnormal eating patterns, with episodes of massive food intake followed by maneuvers seeking to eliminate those calories');
 
-//PERSONAS y COMUNIDAD
 insert into Persona values('JICF000406HJCMSLA7','Felipe Alejandro Jimenez Castillo','M','2000-04-06',45645);
 insert into Rol values ('Founder','JICF000406HJCMSLA7',3,1);
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;

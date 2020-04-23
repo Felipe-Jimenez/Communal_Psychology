@@ -18,8 +18,6 @@ $res = mysqli_query($con, $sql);
 if($res){
   $sql = "INSERT INTO Rol values ('$rol','$curp',$idC,1)";
   mysqli_query($con, $sql);
-  $sql = "INSERT INTO Com_Per values($idC,'$curp')";
-  mysqli_query($con, $sql);
   $sql = "UPDATE Comunidad set n_participantes = n_participantes+1 where id_Comunidad = $idC";
   mysqli_query($con, $sql);
 }

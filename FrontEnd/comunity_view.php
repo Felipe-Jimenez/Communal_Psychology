@@ -4,14 +4,14 @@ session_start();
 if(empty($_SESSION['id']))
   header("location: ../index.php");
 
-$idu = $_GET['id'];
+$idC = $_GET['id'];
 
 //CONECTION TO DATABASE
 require "../BackEnd/conection.php";
 require "styles.php";
 
 $con = conecta();
-$sql  = "SELECT * FROM Comunidad WHERE id_Comunidad = $idu";
+$sql  = "SELECT * FROM Comunidad WHERE id_Comunidad = $idC";
 $res = mysqli_query($con, $sql);
 $num = mysqli_fetch_assoc($res);
 
@@ -24,8 +24,10 @@ $obj = $num['objetivo'];
 $par = $num['n_participantes'];
 
 //segunda consulta para tabla de personas relacionadas
-$sql = "SELECT Persona.curp,Persona.nombre,Rol.rol FROM Rol,Persona WHERE Rol.id_comunidad = $id AND Persona.curp = Rol.id_persona ORDER BY Persona.nombre";
+$sql = "SELECT curp,nombre,rol FROM Persona join Rol on id_comunidad=$id and curp=id_persona ORDER BY nombre";
 $res = mysqli_query($con, $sql);
+
+$divClear = "clearDiv(".$idC.");";
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -57,7 +59,29 @@ $res = mysqli_query($con, $sql);
     </style>
     <script>
       function enviar(n){
-        window.location = "admin_view.php?id="+n;
+        window.location = "admin_view.php?idC="+n;
+      }
+      function clearDiv(id){
+          document.getElementById("d1").innerHTML = "";
+          $('#d1').load('../BackEnd/notIn.php?idC='+id);
+      }
+      function reload(){
+        location.reload();
+      }
+      function agregar(curp, idC){
+        $.ajax({
+          url: '../BackEnd/add.php?curp='+curp+'&idC='+idC,
+          type: 'post',
+          success: function(res){
+            if(res == 0){
+              alert('MISTAKE: not insert user');
+            }else{
+              $('#'+curp).hide();
+            }
+          },error:function(){
+              alert('ERROR: servidor conection');
+            }
+        });
       }
     </script>
   </head>
@@ -82,9 +106,9 @@ $res = mysqli_query($con, $sql);
         <h4><?php echo $par; ?></h4><br>
       </div>
     </div>
-    <div class="rigth_container" >
-      <a href="person_form.php?id=<?php echo $id;?>" class="btn btn-success btn-sm" role="button" aria-pressed="true">New Person</a>
-      <a href="register_p.php?id=<?php echo $id;?>" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Add Person</a>
+    <div class="rigth_container" id="d1">
+      <a href="person_form.php?idC=<?php echo $id;?>" class="btn btn-success btn-sm" role="button" aria-pressed="true">New Person</a>
+      <button class="btn btn-primary btn-sm" onClick=<?php echo $divClear;?>>Add Person</button>
       <table class="table table-sm" style="margin-top:5px;">
         <thead class="thead-dark">
           <tr>

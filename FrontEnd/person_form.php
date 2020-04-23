@@ -38,7 +38,7 @@ require "styles.php";
       <div class="container mt-5">
         <form name="FORM1" action="../BackEnd/register_p.php" method="post">
 
-          <input type="hidden" name="idC" value=<?php echo $_GET['id']; ?>>
+          <input type="hidden" name="idC" value=<?php echo $_GET['idC']; ?>>
 
           <div class="form-group">
             <label for="curp">CURP</label>
