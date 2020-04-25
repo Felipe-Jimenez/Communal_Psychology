@@ -15,6 +15,7 @@ create table Persona(
   fecha_n date not null,
   codigo_postal int not null
 );
+create index NOMBRES on Persona(nombre);
 create table Comunidad(
   id_Comunidad int primary key auto_increment,
   nombre varchar(30) not null,
@@ -110,3 +111,10 @@ update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 insert into Persona values('RUMJ850212HJCZNS15','Jose de Jesus Ruiz Mendoza','M','1985-02-12',45875);
 insert into Rol values ('Member','RUMJ850212HJCZNS15',3,1);
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
+
+insert into Persona values('TOMJ000404HASRLS09','Jose Torres Maldonado','M','2000-04-04',85698);
+insert into Persona values('GOGM000608MJCNDR01','Maria Esperanza Gonzales Gudiño','F','2000-08-06',45645);
+insert into Persona values('AAZE950428HTLLMS01','Esteban a la Torre Zamora','M','1995-06-28',15689);
+insert into Persona values('OIHA770826MOCRRN27','Andrea Ortiz Hernandez','F','1977-08-26',74859);
+insert into Persona values('GOVI770826MCXNRR88','Irma Vargaz Gonzales','F','1977-08-26',74859);
+insert into Persona values('GOSA980915MNLNTR28','Armando Gonzales Soto','M','1998-09-15',45645);

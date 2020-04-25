@@ -10,7 +10,7 @@ require "styles.php";
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Community psychology</title>
+    <title id="t">Community psychology</title>
     <meta name"viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style media="screen">
       html{
@@ -26,9 +26,9 @@ require "styles.php";
       }
       .about{
         width: 80%;
-        height: 800px;
+        height: 650px;
         margin-top: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         padding-top: 30px;
         background-image: linear-gradient(to top, #fff7e6 0%, #f2f2f2 100%);
       }
@@ -43,6 +43,7 @@ require "styles.php";
         background-color: #2E3436;
         width: 100%;
         height: 70px;
+        margin-top: 20px;
       }
     </style>
   </head>
@@ -103,6 +104,7 @@ require "styles.php";
         </div>
       </div>
     </div>
+      <a href="#anclArriba">Go Up</a>
     <div class="bot">
       <a href="https://github.com/Felipe-Jimenez/Communal_Psychology.git" target="_blank">
         <img src="../imgs/github.png" height="50px" width="50px" style="margin-top:10px">
