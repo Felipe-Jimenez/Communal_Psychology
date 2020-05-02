@@ -43,7 +43,8 @@ $divClear = "clearDiv(".$idC.");";
       }
       .left_container{
         float: left;
-        padding-top: 30px;
+        margin-top: 65px;
+        padding-top: 35px;
         width: 30%;
         height: 550px;
         background-color: white;
@@ -55,11 +56,12 @@ $divClear = "clearDiv(".$idC.");";
         padding-right: 10px;
         width: 55%;
         height: 550;
+        overflow-y: scroll;
       }
     </style>
     <script>
       function enviar(n){
-        window.location = "admin_view.php?idC="+n;
+        window.location = "person_view.php?id="+n;
       }
       function clearDiv(id){
           document.getElementById("d1").innerHTML = "";

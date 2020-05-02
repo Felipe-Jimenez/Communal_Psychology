@@ -14,7 +14,7 @@ if(!empty($_POST['name'])){
   $sql = "SELECT * FROM Persona WHERE nombre LIKE '%$name%'";
 }
 else{
-  $sql  = "SELECT * FROM Persona ORDER BY curp";
+  $sql  = "SELECT * FROM Persona ORDER BY nombre";
 }
 
 $res = mysqli_query($con, $sql);
@@ -51,6 +51,7 @@ $res = mysqli_query($con, $sql);
             <th scope="col">Name</th>
             <th scope="col">Gender</th>
             <th scope="col">Birth</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -66,6 +67,7 @@ $res = mysqli_query($con, $sql);
                     <td>$name</td>
                     <td>$gender</td>
                     <td>$date</td>
+                    <td><a href=\"person_view.php?id=$curp\" class=\"btn btn-info btn-sm\" role=\"button\" aria-pressed=\"true\">View</a></td>
                   </tr>";
             $i += 1;
           }

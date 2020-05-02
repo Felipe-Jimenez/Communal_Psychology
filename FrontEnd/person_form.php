@@ -45,13 +45,14 @@ require "styles.php";
             <div class="col">
               <input  name="curp" type="text" class="form-group mx-sm-3 mb-2">
             </div>
-          </div>
-
-          <div class="form-group">
             <label for="name">Name</label>
             <div class="col">
               <input  name="name" type="text" class="form-group mx-sm-3 mb-2" placeholder="Example">
             </div>
+          </div>
+
+          <div class="form-group">
+
           </div>
 
           <div class="form-group  col-md-3">

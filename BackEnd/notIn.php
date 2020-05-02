@@ -4,7 +4,7 @@
     #id from comunity what i ignore persons
     $idC = $_GET['idC'];
 
-    $sql = "SELECT * FROM Persona WHERE curp NOT IN (SELECT curp FROM Persona join Rol on id_comunidad=$idC and curp=id_persona)";
+    $sql = "SELECT * FROM Persona WHERE curp NOT IN (SELECT curp FROM Persona join Rol on id_comunidad=$idC and curp=id_persona) ORDER BY nombre";
     $res = mysqli_query($con, $sql);
 
 ?>

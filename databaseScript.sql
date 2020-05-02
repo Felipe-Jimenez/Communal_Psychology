@@ -35,7 +35,7 @@ alter table Rol add foreign key (id_persona) references Persona(curp);
 alter table Rol add foreign key (id_comunidad) references Comunidad(id_Comunidad);
 
 create table Perfil(
-  id_persona varchar(18),
+  id_persona varchar(18) unique,
   salud_mental varchar(30),
   salud_fisica varchar(30)
 );
@@ -51,22 +51,17 @@ alter table Perfi_comunal add foreign key (id_comunidad) references Comunidad(id
 
 create table Padecimiento(
   id_persona varchar(18),
+  id_trastorno varchar(30),
   estado varchar(30) not null
 );
 alter table Padecimiento add foreign key(id_persona) references Persona(curp);
+alter table Padecimiento add foreign key (id_trastorno) references Trastorno(nombre);
 
 create table Trastorno(
   nombre varchar(30) primary key,
   tipo varchar(20) not null,
   descripcion varchar(150) not null
 );
-create table Pade_Tras(
-  id_padecimiento varchar(18),
-  id_trastorno varchar(30)
-);
-alter table Pade_Tras add foreign key (id_padecimiento) references Padecimiento(id_persona);
-alter table Pade_Tras add foreign key (id_trastorno) references Trastorno(nombre);
-
 
 insert into Administrador values(0,'_denso','denso@gmail.com','fae0b27c451c728867a567e8c1bb4e53',1,0);
 
@@ -101,7 +96,7 @@ insert into Rol values ('Admin','BADD110313HCMLNS09',3,1);
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('FOCM980826MJCLSR47','Maria Guadalupe Flores Castro','F','1998-08-26',45875);
-insert into Rol values ('Member','FOCM980826MJCLSR47',3,1);
+insert into Rol values ('Moderator','FOCM980826MJCLSR47',3,1);
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('SALA770826MTSLPR82','Araceli Salazar Lopez','F','1977-08-26',45875);
@@ -118,3 +113,4 @@ insert into Persona values('AAZE950428HTLLMS01','Esteban a la Torre Zamora','M',
 insert into Persona values('OIHA770826MOCRRN27','Andrea Ortiz Hernandez','F','1977-08-26',74859);
 insert into Persona values('GOVI770826MCXNRR88','Irma Vargaz Gonzales','F','1977-08-26',74859);
 insert into Persona values('GOSA980915MNLNTR28','Armando Gonzales Soto','M','1998-09-15',45645);
+insert into Persona values('AAVM000317MJCNGRC9','Mariana Mayte Andrade Vega','F','2000-03-17',56568);

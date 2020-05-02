@@ -22,5 +22,5 @@ if($res){
   mysqli_query($con, $sql);
 }
 
-header("Location: ../FrontEnd/comunity_view.php?id=$idC");
+header("Location: ../FrontEnd/profile_form.php?id=$curp");
 ?>
