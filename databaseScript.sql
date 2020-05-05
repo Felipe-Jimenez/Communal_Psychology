@@ -25,6 +25,7 @@ create table Comunidad(
   objetivo varchar(100),
   n_participantes int default 0
 );
+create index CNOMBRES on Comunidad(nombre);
 create table Rol(
   rol varchar(30) not null,
   id_persona varchar(18),
@@ -49,6 +50,12 @@ create table Perfi_comunal(
 );
 alter table Perfi_comunal add foreign key (id_comunidad) references Comunidad(id_Comunidad);
 
+create table Trastorno(
+  nombre varchar(30) primary key,
+  tipo varchar(20) not null,
+  descripcion varchar(150) not null
+);
+
 create table Padecimiento(
   id_persona varchar(18),
   id_trastorno varchar(30),
@@ -57,11 +64,6 @@ create table Padecimiento(
 alter table Padecimiento add foreign key(id_persona) references Persona(curp);
 alter table Padecimiento add foreign key (id_trastorno) references Trastorno(nombre);
 
-create table Trastorno(
-  nombre varchar(30) primary key,
-  tipo varchar(20) not null,
-  descripcion varchar(150) not null
-);
 
 insert into Administrador values(0,'_denso','denso@gmail.com','fae0b27c451c728867a567e8c1bb4e53',1,0);
 
@@ -89,28 +91,46 @@ insert into Trastorno values('Nervous bulimia','Alimentary','Abnormal eating pat
 
 insert into Persona values('JICF000406HJCMSLA7','Felipe Alejandro Jimenez Castillo','M','2000-04-06',45645);
 insert into Rol values ('Founder','JICF000406HJCMSLA7',3,1);
+insert into Perfil values('JICF000406HJCMSLA7','Balanced','Critical');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('BADD110313HCMLNS09','Davalos Arturo Daveson Darrell','M','2013-07-16',45875);
 insert into Rol values ('Admin','BADD110313HCMLNS09',3,1);
+insert into Perfil values('BADD110313HCMLNS09','Balanced','Healthy');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('FOCM980826MJCLSR47','Maria Guadalupe Flores Castro','F','1998-08-26',45875);
 insert into Rol values ('Moderator','FOCM980826MJCLSR47',3,1);
+insert into Perfil values('FOCM980826MJCLSR47','Healthy','Balanced');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('SALA770826MTSLPR82','Araceli Salazar Lopez','F','1977-08-26',45875);
 insert into Rol values ('Member','SALA770826MTSLPR82',3,1);
+insert into Perfil values('SALA770826MTSLPR82','Healthy','Balanced');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('RUMJ850212HJCZNS15','Jose de Jesus Ruiz Mendoza','M','1985-02-12',45875);
 insert into Rol values ('Member','RUMJ850212HJCZNS15',3,1);
+insert into Perfil values('RUMJ850212HJCZNS15','Healthy','Balanced');
 update Comunidad set n_participantes = n_participantes+1 where id_Comunidad = 3;
 
 insert into Persona values('TOMJ000404HASRLS09','Jose Torres Maldonado','M','2000-04-04',85698);
+insert into Perfil values('TOMJ000404HASRLS09','Balanced','Critical');
+
 insert into Persona values('GOGM000608MJCNDR01','Maria Esperanza Gonzales Gudiño','F','2000-08-06',45645);
+insert into Perfil values('GOGM000608MJCNDR01','Critical','Critical');
+
 insert into Persona values('AAZE950428HTLLMS01','Esteban a la Torre Zamora','M','1995-06-28',15689);
+insert into Perfil values('AAZE950428HTLLMS01','Balanced','Balanced');
+
 insert into Persona values('OIHA770826MOCRRN27','Andrea Ortiz Hernandez','F','1977-08-26',74859);
+insert into Perfil values('OIHA770826MOCRRN27','Critical','Balanced');
+
 insert into Persona values('GOVI770826MCXNRR88','Irma Vargaz Gonzales','F','1977-08-26',74859);
+insert into Perfil values('GOVI770826MCXNRR88','Balanced','Balanced');
+
 insert into Persona values('GOSA980915MNLNTR28','Armando Gonzales Soto','M','1998-09-15',45645);
+insert into Perfil values('GOSA980915MNLNTR28','Balanced','Heakthy');
+
 insert into Persona values('AAVM000317MJCNGRC9','Mariana Mayte Andrade Vega','F','2000-03-17',56568);
+insert into Perfil values('AAVM000317MJCNGRC9','Critical','Critical');

@@ -8,7 +8,15 @@ if(empty($_SESSION['id']))
 require "../BackEnd/conection.php";
 require "styles.php";
 $con = conecta();
-$sql  = "SELECT * FROM Comunidad ORDER BY nombre";
+
+if(!empty($_POST['name'])){
+  $name = $_POST['name'];
+  $sql = "SELECT * FROM Comunidad WHERE nombre LIKE '%$name%'";
+}
+else
+  $sql  = "SELECT * FROM Comunidad ORDER BY nombre";
+
+
 $res = mysqli_query($con, $sql);
 ?>
 
@@ -17,7 +25,7 @@ $res = mysqli_query($con, $sql);
   <head>
     <meta charset="utf-8">
     <title>Registeres Comunities</title>
-    <meta name"viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style media="screen">
       .middle{
         margin-top: 10px;
@@ -35,6 +43,10 @@ $res = mysqli_query($con, $sql);
   <body>
     <center>
     <h3 style="margin-top:15px;">Registered <mark>Comunities</mark></h3>
+    <form class="form-inline" action="Listado_comunidades.php" method="post" style="margin-left:70%;margin-top:10px;">
+      <input type="text" name="name" value="" placeholder="Name">
+      <button type="submit" name="btnSearch" class="btn btn-warning btn-sm" style="margin-left:10px;">Search</button>
+    </form>
     <div class="middle">
       <table class="table table-md table-striped mt-4">
         <thead class="thead-dark">

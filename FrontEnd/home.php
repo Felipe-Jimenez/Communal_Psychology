@@ -56,19 +56,19 @@ require "styles.php";
       <div class="row r1">
         <div class="col-sm">
           <a href="Listado_comunidades.php">
-            <img src="../imgs/list_comuniti.png" height="130px" width="130px">
+            <img src="../imgs/list_comuniti.png" height="140px" width="140px">
           </a>
           <h5><mark>Registered Comunities</mark></h5>
         </div>
         <div class="col-sm">
           <a href="Listado_Trastornos.php">
-            <img src="../imgs/list_transtorns.png" height="140px" width="140px">
+            <img src="../imgs/list_transtorns.png" height="150px" width="150px">
           </a>
           <h5><mark>Registered Disorders</mark></h5>
         </div>
         <div class="col-sm">
           <a href="Listado_Personas.php">
-            <img src="../imgs/list_persons.png" height="130px" width="165px">
+            <img src="../imgs/list_persons.png" height="140px" width="175px">
           </a><br>
           <h5><mark>Registered Persons</mark></h5>
         </div>
@@ -76,21 +76,15 @@ require "styles.php";
       <div class="row">
         <div class="col-sm">
           <a href="comunity_form.php">
-            <img src="../imgs/register_comuniti.png" height="140px" width="140px">
+            <img src="../imgs/register_comuniti.png" height="150px" width="150px">
           </a>
           <h5><mark>New Comunity</mark></h5>
         </div>
         <div class="col-sm">
           <a href="transtorn_form.php">
-            <img src="../imgs/register_transtorn.png" height="145px" width="145px">
+            <img src="../imgs/register_transtorn.png" height="155px" width="155px">
           </a>
           <h5><mark>New Disorder</mark></h5>
-        </div>
-        <div class="col-sm">
-          <a href="search_person.php">
-            <img src="../imgs/person_search.png" height="130px" width="130px">
-          </a>
-          <h5><mark>Search by Name</mark></h5>
         </div>
       </div>
     </div>
